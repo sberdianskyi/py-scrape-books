@@ -24,7 +24,6 @@ class BookSpider(scrapy.Spider):
 
     def closed(self, reason: str):
         self.driver.close()
-        return self.closed(reason)
 
     def parse(self, response: Response, **kwargs):
         for book_card in response.css("article.product_pod"):
